@@ -1,10 +1,12 @@
-fruits = ["яблоко", "банан", "апельсин"]
-for fruit in fruits:
-    print(fruit)
-#выше это перебр данных путём использования цикла for
-#ниже это тот же принцип интерации(перебора данных) только через цикл while
-fruits = ["яблоко", "банан", "апельсин"]
-i = 0
-while i < len(fruits):
-    print(fruits[i])
-    i += 1
+total = 0
+while True:
+    user_input = input("Введите число: ")
+    if user_input == "sum":
+        break
+    elif (user_input[0] == '-' and user_input[1:].isnumeric()) or (user_input.isnumeric()) \
+            or (user_input.count('.') == 1 and user_input.replace('.', '').isnumeric()):
+        number = float(user_input)
+        total += number
+    else:
+        print("Некорректный ввод. Пожалуйста введите число!")
+print(total)
